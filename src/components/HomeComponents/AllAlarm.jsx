@@ -23,7 +23,7 @@ const AllAlarm = () => {
           <h2 style={{ color: '#0F1C40' }} className="lg:text-3xl md:text-xl text-lg md:font-bold font-semibold">
             All Alarms
           </h2>
-          <div className="flex items-center justify-start ml-2">
+          <div className="flex items-center justify-start ml-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -37,7 +37,7 @@ const AllAlarm = () => {
                 clipRule="evenodd"
               />
             </svg>
-            <h3 style={{ color: '#FF3334' }} className="md:text-xl text-sm">
+            <h3 style={{ color: '#FF3334' }} className="md:text-xl text-xs">
               1 / 4
             </h3>
           </div>
