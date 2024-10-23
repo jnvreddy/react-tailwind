@@ -5,7 +5,7 @@ function HomeMachines() {
   return (
     <section className="col-span-4 md:p-2 p-4 mt-2">
       <header className="flex justify-between items-center mb-4">
-        <h2 className="text-[#0F1C40] md:text-xl text-lg md:font-bold font-semibold">
+        <h2 className="text-[#0F1C40] lg:text-3xl md:text-xl text-lg md:font-bold font-semibold">
           Machines under alarm
         </h2>
         <button className="bg-[#0F1C40] text-xs font-bold text-white p-2.5 px-3 rounded-md">
@@ -30,8 +30,12 @@ function HomeMachines() {
                 </p>
               </div>
               <div className="md:text-right">
-                <p className="text-xs font-semibold text-[#0F1C40]">Installation Date</p>
-                <span className="text-[#0F1C40] sm:text-lg ">Feb 20, 2024 1324 hrs</span>
+                <p className="text-xs font-semibold text-[#0F1C40]">
+                  Installation Date
+                </p>
+                <span className="text-[#0F1C40] sm:text-lg ">
+                  Feb 20, 2024 1324 hrs
+                </span>
               </div>
             </div>
 
@@ -85,31 +89,73 @@ function HomeMachines() {
           <div className="bg-gray-100 xl:col-span-3 md:col-span-2 grid grid-cols-3 gap-1 md:p-1 p-2 border-2 border-blue-950 rounded-md">
             {/* Parameters */}
             {[
-              { label: 'Temp', value: '105 °C', color: '#FF3334', checkId: 'toggleOne' },
-              { label: 'Pressure', value: '400 Pa', color: '#0F1C40' },
-              { label: 'Param 2', value: '390 Unit', color: '#0F1C40' },
-              { label: 'Param 3', value: '690 Unit', color: '#0F1C40' },
-              { label: 'Param 4', value: '330 Unit', color: '#FFB800', checkId: 'toggleTwo' },
-              { label: 'Param 5', value: '621 Unit', color: '#0F1C40' },
-              { label: 'Param 6', value: '290 Unit', color: '#0F1C40' },
-              { label: 'Param 7', value: '90 Unit', color: '#FF3334', checkId: 'toggleThree' },
-              { label: 'Param 8', value: '390 Unit', color: '#0F1C40' },
+              {
+                label: "Temp",
+                value: "105 °C",
+                color: "#FF3334",
+                checkId: "toggleOne",
+              },
+              { label: "Pressure", value: "400 Pa", color: "#0F1C40" },
+              { label: "Param 2", value: "390 Unit", color: "#0F1C40" },
+              { label: "Param 3", value: "690 Unit", color: "#0F1C40" },
+              {
+                label: "Param 4",
+                value: "330 Unit",
+                color: "#FFB800",
+                checkId: "toggleTwo",
+              },
+              { label: "Param 5", value: "621 Unit", color: "#0F1C40" },
+              { label: "Param 6", value: "290 Unit", color: "#0F1C40" },
+              {
+                label: "Param 7",
+                value: "90 Unit",
+                color: "#FF3334",
+                checkId: "toggleThree",
+              },
+              { label: "Param 8", value: "390 Unit", color: "#0F1C40" },
             ].map(({ label, value, color, checkId }, index) => (
-              <div key={index} className={`md:p-1 p-2 rounded-md text-start w-28 h-15 ${color === '#FF3334' ? 'text-[#FF3334]' : color === '#FFB800' ? ' text-[#FFB800]' : 'text-[#0F1C40]'}`}>
+              <div
+                key={index}
+                className={`md:p-1 p-2 rounded-md text-start w-28 h-15 ${
+                  color === "#FF3334"
+                    ? "text-[#FF3334]"
+                    : color === "#FFB800"
+                    ? " text-[#FFB800]"
+                    : "text-[#0F1C40]"
+                }`}
+              >
                 <div className="flex justify-between">
                   <p className="text-xs font-medium">{label}</p>
                   {checkId && (
-                    <label htmlFor={checkId} className="flex items-center cursor-pointer select-none text-dark dark:text-white">
+                    <label
+                      htmlFor={checkId}
+                      className="flex items-center cursor-pointer select-none text-dark dark:text-white"
+                    >
                       <div className="relative mr-4 scale-75">
-                        <input type="checkbox" id={checkId} className="peer sr-only" />
-                        <div className={`block h-4 w-6 rounded-full bg-gray-400 dark:bg-dark-2 peer-checked:${color === '#FFB800' ? 'bg-[#FFB800]' : color === '#FF3334' ? 'bg-[#FF3334]' : 'bg-[#0F1C40]'}`}></div>
+                        <input
+                          type="checkbox"
+                          id={checkId}
+                          className="peer sr-only"
+                        />
+                        <div
+                          className={`block h-4 w-6 rounded-full bg-gray-400 dark:bg-dark-2 peer-checked:${
+                            color === "#FFB800"
+                              ? "bg-[#FFB800]"
+                              : color === "#FF3334"
+                              ? "bg-[#FF3334]"
+                              : "bg-[#0F1C40]"
+                          }`}
+                        ></div>
                         <div className="absolute flex items-center justify-center h-2 w-2 transition bg-white rounded-full dot left-1 top-1 dark:bg-dark-5 peer-checked:translate-x-full peer-checked:bg-white peer-checked:dark:bg-white"></div>
                       </div>
                     </label>
                   )}
                 </div>
                 <p className="line-height-1">{value}</p>
-                <p className="text-[6px]">Between {value === '105 °C' ? '40 °C & 60 °C' : '350 Pa & 800 Pa'}</p>
+                <p className="text-[6px]">
+                  Between{" "}
+                  {value === "105 °C" ? "40 °C & 60 °C" : "350 Pa & 800 Pa"}
+                </p>
               </div>
             ))}
           </div>
@@ -118,12 +164,14 @@ function HomeMachines() {
           <div className="xl:col-span-4 md:col-span-3 p-3 rounded-lg border-2 border-blue-950 shadow-md w-full max-w-3xl">
             {/* Temperature Bar */}
             <div className="flex justify-between items-center mb-1">
-              <span className="text-[#FF3334] text-xl font-bold">Temperature</span>
+              <span className="text-[#FF3334] text-xl font-bold">
+                Temperature
+              </span>
             </div>
             <div className="flex w-full md:h-3 h-2.5 bg-gray-200 overflow-hidden">
               <div
                 className="flex flex-col justify-center overflow-hidden bg-[#008E28] text-xs text-white text-center whitespace-nowrap"
-                style={{ width: '50%' }}
+                style={{ width: "50%" }}
                 role="progressbar"
                 aria-valuenow="25"
                 aria-valuemin="0"
@@ -131,15 +179,17 @@ function HomeMachines() {
               ></div>
               <div
                 className="flex flex-col justify-center overflow-hidden bg-[#FF3334] md:text-xs text-[8px] font-semibold text-white text-center whitespace-nowrap"
-                style={{ width: '20%' }}
+                style={{ width: "20%" }}
                 role="progressbar"
                 aria-valuenow="25"
                 aria-valuemin="0"
                 aria-valuemax="100"
-              >105 °C</div>
+              >
+                105 °C
+              </div>
               <div
                 className="flex flex-col justify-center overflow-hidden bg-gray-200 text-xs text-white text-center whitespace-nowrap"
-                style={{ width: '30%' }}
+                style={{ width: "30%" }}
                 role="progressbar"
                 aria-valuenow="25"
                 aria-valuemin="0"
@@ -147,74 +197,95 @@ function HomeMachines() {
               ></div>
             </div>
 
-           
             {/*-- Time Markers --*/}
-                <div className="flex justify-between w-full md:text-xs text-[8px] mb-2">
-                    <div className="md:space-x-[58%] md:w-[65%] space-x-[58%] w-[64%]">
-                        <span className="text-black">0000 hrs</span>
-                        <span className="text-[#FF3334] font-semibold">1830 hrs</span>
-                    </div>
-                    <div className="space-x-5">
-                        <span className="text-[#FF3334] font-semibold">2030 hrs</span>
-                        <span className="text-black">2359 hrs</span>
-                    </div>
-                </div>
+            <div className="flex justify-between w-full md:text-xs text-[8px] mb-2">
+              <div className="md:space-x-[58%] md:w-[65%] space-x-[58%] w-[64%]">
+                <span className="text-black">0000 hrs</span>
+                <span className="text-[#FF3334] font-semibold">1830 hrs</span>
+              </div>
+              <div className="space-x-5">
+                <span className="text-[#FF3334] font-semibold">2030 hrs</span>
+                <span className="text-black">2359 hrs</span>
+              </div>
+            </div>
 
-                {/*------------------------------- Param 4 Bar -------------*/}
-                <div className="flex justify-between items-center mb-1">
-                    <span style={{ color: '#FFB800' }} className="text-xl font-bold">
-                        Param 4
-                    </span>
-                </div>
-                <div className="flex w-full md:h-3 h-2.5 bg-gray-200 overflow-hidden">
-                    <div className="flex flex-col justify-center overflow-hidden bg-[#008E28] text-xs text-white text-center whitespace-nowrap"
-                        style={{ width: '40%' }} role="progressbar" aria-valuenow="25" aria-valuemin="0"
-                        aria-valuemax="100"></div>
-                    <div className="flex flex-col justify-center overflow-hidden bg-[#FFB800] md:text-xs text-[8px] font-semibold text-white text-center whitespace-nowrap"
-                        style={{ width: '30%' }} role="progressbar" aria-valuenow="25" aria-valuemin="0"
-                        aria-valuemax="100">305 Unit</div>
-                </div>
+            {/*------------------------------- Param 4 Bar -------------*/}
+            <div className="flex justify-between items-center mb-1">
+              <span style={{ color: "#FFB800" }} className="text-xl font-bold">
+                Param 4
+              </span>
+            </div>
+            <div className="flex w-full md:h-3 h-2.5 bg-gray-200 overflow-hidden">
+              <div
+                className="flex flex-col justify-center overflow-hidden bg-[#008E28] text-xs text-white text-center whitespace-nowrap"
+                style={{ width: "40%" }}
+                role="progressbar"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+              <div
+                className="flex flex-col justify-center overflow-hidden bg-[#FFB800] md:text-xs text-[8px] font-semibold text-white text-center whitespace-nowrap"
+                style={{ width: "30%" }}
+                role="progressbar"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                305 Unit
+              </div>
+            </div>
 
-                {/*-- Time Markers --*/}
-                <div className="flex justify-between w-full md:text-xs text-[8px] mb-2">
-                    <div className="md:space-x-[42%] md:w-[65%] space-x-[40%] w-[62%]">
-                        <span className="text-black">0000 hrs</span>
-                        <span className="text-[#FFB800] font-semibold">1830 hrs</span>
-                    </div>
-                    <div className="space-x-5">
-                        <span className="text-[#FFB800] font-semibold">2030 hrs</span>
-                        <span className="text-black">2359 hrs</span>
-                    </div>
-                </div>
+            {/*-- Time Markers --*/}
+            <div className="flex justify-between w-full md:text-xs text-[8px] mb-2">
+              <div className="md:space-x-[42%] md:w-[65%] space-x-[40%] w-[62%]">
+                <span className="text-black">0000 hrs</span>
+                <span className="text-[#FFB800] font-semibold">1830 hrs</span>
+              </div>
+              <div className="space-x-5">
+                <span className="text-[#FFB800] font-semibold">2030 hrs</span>
+                <span className="text-black">2359 hrs</span>
+              </div>
+            </div>
 
-                {/*------------------------------------- Param 7 Bar --*/}
-                <div className="flex justify-between items-center mb-1">
-                    <span style={{ color: '#FF3334' }} className="text-xl font-bold">
-                        Param 7
-                    </span>
-                </div>
-                <div className="flex w-full md:h-3 h-2.5 bg-gray-200 overflow-hidden">
-                    <div className="flex flex-col justify-center overflow-hidden bg-[#008E28] text-xs text-white text-center whitespace-nowrap"
-                        style={{ width: '30%' }} role="progressbar" aria-valuenow="25" aria-valuemin="0"
-                        aria-valuemax="100"></div>
-                    <div className="flex flex-col justify-center overflow-hidden bg-[#FF3334] md:text-xs text-[8px] text-white font-semibold text-center whitespace-nowrap"
-                        style={{ width: '40%' }} role="progressbar" aria-valuenow="25" aria-valuemin="0"
-                        aria-valuemax="100">90 Unit</div>
-                </div>
+            {/*------------------------------------- Param 7 Bar --*/}
+            <div className="flex justify-between items-center mb-1">
+              <span style={{ color: "#FF3334" }} className="text-xl font-bold">
+                Param 7
+              </span>
+            </div>
+            <div className="flex w-full md:h-3 h-2.5 bg-gray-200 overflow-hidden">
+              <div
+                className="flex flex-col justify-center overflow-hidden bg-[#008E28] text-xs text-white text-center whitespace-nowrap"
+                style={{ width: "30%" }}
+                role="progressbar"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+              <div
+                className="flex flex-col justify-center overflow-hidden bg-[#FF3334] md:text-xs text-[8px] text-white font-semibold text-center whitespace-nowrap"
+                style={{ width: "40%" }}
+                role="progressbar"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                90 Unit
+              </div>
+            </div>
 
-                {/*-- Time Markers --*/}
-                <div className="flex justify-between w-full md:text-xs text-[8px] mb-2">
-                    <div className="md:space-x-[27%] md:w-[65%] space-x-[25%] w-[64%]">
-                        <span className="text-black">0000 hrs</span>
-                        <span className="text-[#FF3334] font-semibold">1830 hrs</span>
-                    </div>
-                    <div className="space-x-5">
-                        <span className="text-[#FF3334] font-semibold">2030 hrs</span>
-                        <span className="text-black">2359 hrs</span>
-                    </div>
-                </div>
-
-
+            {/*-- Time Markers --*/}
+            <div className="flex justify-between w-full md:text-xs text-[8px] mb-2">
+              <div className="md:space-x-[27%] md:w-[65%] space-x-[25%] w-[64%]">
+                <span className="text-black">0000 hrs</span>
+                <span className="text-[#FF3334] font-semibold">1830 hrs</span>
+              </div>
+              <div className="space-x-5">
+                <span className="text-[#FF3334] font-semibold">2030 hrs</span>
+                <span className="text-black">2359 hrs</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

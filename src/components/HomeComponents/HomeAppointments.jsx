@@ -5,10 +5,10 @@ const HomeAppointments = () => {
   return (
     <>
       {/* Visible only on small screens */}
-      <div className="p-6 sm:hidden">
+      <div className="p-4 sm:hidden">
         <h2 className="text-2xl font-bold mb-4">Appointments</h2>
         <div className="bg-gray-100 md:p-6 rounded-lg shadow-lg overflow-hidden">
-          <div className="grid grid-cols-1 gap-6 p-4">
+          <div className="grid grid-cols-1 gap-6 p-6">
             {/* Appointment 1 */}
             <div className="flex justify-center">
               <Appointcard Product={"Venturi Dryer"} Name={"John Doe"} />

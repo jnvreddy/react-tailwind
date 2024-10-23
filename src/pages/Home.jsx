@@ -10,12 +10,14 @@ function Home() {
   return (
     <section className="bg-white">
       <Header />
-      <div className="lg:grid grid-cols-7  mb-2">
-        <AllAlarm />
-        <HomeMachines />
+      <div className="md:m-10 m-4">
+        <div className="lg:grid grid-cols-7  mb-2">
+          <AllAlarm />
+          <HomeMachines />
+        </div>
+        <UpcomingOrders />
+        <HomeAppointments />
       </div>
-      <UpcomingOrders />
-      <HomeAppointments />
       <Footer />
     </section>
   );
